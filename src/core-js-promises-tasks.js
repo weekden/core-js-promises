@@ -40,7 +40,9 @@ function getPromise(number) {
  * Promise.reject('fail')     => promise that will be fulfilled with 'fail' value
  */
 function getPromiseResult(source) {
-  return source.then(() => 'success').catch(() => 'fail');
+  return Promise.resolve(source)
+    .then(() => 'success')
+    .catch(() => 'fail');
 }
 
 /**
