@@ -138,13 +138,8 @@ async function getAllResult(promises) {
  * [promise1, promise4, promise3] => Promise.resolved('104030')
  * [promise1, promise4, promise3, promise2] => Promise.resolved('10403020')
  */
-async function queuePromises(promises) {
-  const resultArr = await Promise.allSettled(promises);
-  let result = '';
-  resultArr.forEach((item) => {
-    if (item.status === 'fulfilled') result += item.value;
-  });
-  return result;
+function queuePromises(/* promises */) {
+  throw new Error('Not implemented');
 }
 
 module.exports = {
